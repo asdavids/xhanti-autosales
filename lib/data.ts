@@ -127,6 +127,27 @@ export const cars: Car[] = [
     description: "Well-maintained 2020 Mercedes-Benz GLE300d 4MATIC in iridium silver. 2.0L diesel engine with low fuel consumption, AMG styling pack, panoramic sunroof, and full black leather interior. Located in Lusaka.",
     features: ["2.0L Diesel Engine", "9-Speed Automatic", "4MATIC All-Wheel Drive", "AMG Line Package", "Panoramic Sunroof", "Black Leather Interior", "MBUX Infotainment", "Digital Instrument Cluster", "Ambient Lighting", "Rear AC Vents", "Lane Assist", "Blind Spot Monitoring"],
   },
+  {
+    id: "6",
+    slug: "toyota-prado-vxl-2022",
+    name: "Toyota Prado VX-L 2022",
+    make: "Toyota",
+    year: 2022,
+    price: 73000,
+    priceZMW: 1971000,
+    monthlyPayment: "Negotiable",
+    mileage: "53,000 km",
+    transmission: "Automatic",
+    fuelType: "Diesel",
+    condition: "Used",
+    bodyType: "SUV",
+    featured: true,
+    image: "/prado-1.webp",
+    images: ["/prado-1.webp", "/prado-2.webp", "/prado-3.webp", "/prado-4.webp"],
+    imageAlt: "Toyota Prado VX-L 2022",
+    description: "Immaculate 2022 Toyota Land Cruiser Prado VX-L in pearl white. 2.8L GD-6 diesel engine with 4x4 capability. Fully loaded with premium comfort and safety features. Located in Lusaka.",
+    features: ["2.8L GD-6 Diesel Engine", "Automatic 4x4", "Leather Heated & Cooled Seats", "Panoramic Sunroof", "360° Camera", "Pre-Collision Assist", "Lane Assist", "Cooler Box", "Rear Spare Tyre", "Tow Bar", "Premium Alloy Wheels"],
+  },
 ];
 
 export const reviews = [
