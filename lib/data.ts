@@ -18,6 +18,7 @@ export interface Car {
   imageAlt?: string;
   description?: string;
   features?: string[];
+  sold?: boolean;
 }
 
 export const cars: Car[] = [

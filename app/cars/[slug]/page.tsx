@@ -3,6 +3,7 @@ import Link from "next/link";
 import { cars } from "@/lib/data";
 import { useState, use } from "react";
 import { notFound } from "next/navigation";
+import MobileNav from "../../components/MobileNav";
 
 const WhatsAppIcon = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
@@ -16,32 +17,59 @@ const CheckIcon = () => (
   </svg>
 );
 
+const ShareIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+    <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
+    <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+  </svg>
+);
+
 export default function CarPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = use(params);
   const car = cars.find((c) => c.slug === slug);
   if (!car) return notFound();
 
   const [mainImage, setMainImage] = useState(car.image);
+  const [copied, setCopied] = useState(false);
+
+  const waMessage = encodeURIComponent(`Hi, I'm interested in the ${car.name} (K${car.priceZMW.toLocaleString()}). Is it still available?`);
+  const waLink = `https://wa.me/260961185620?text=${waMessage}`;
+
+  const handleShare = () => {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
+  };
 
   return (
     <div style={{ fontFamily: "Inter, sans-serif", minHeight: "100vh", background: "#fff" }}>
       <nav style={{ position: "fixed", top: 24, left: "50%", transform: "translateX(-50%)", width: "90%", maxWidth: 1200, background: "#fff", border: "1px solid #f1f5f9", borderRadius: 24, padding: "0 24px", height: 72, display: "flex", alignItems: "center", justifyContent: "space-between", zIndex: 100, boxShadow: "0 2px 20px rgba(0,0,0,0.06)" }}>
         <Link href="/"><img src="/logo.png" alt="Xhanti AutoSales" style={{ height: 100, width: "auto" }} /></Link>
-        <div style={{ display: "flex", gap: 32 }}>
+        <div className="desktop-nav" style={{ display: "flex", gap: 32 }}>
           <Link href="/inventory" style={{ fontWeight: 700, fontSize: 14, color: "#000", textDecoration: "none" }}>All Inventory</Link>
           <Link href="/trade-in" style={{ fontWeight: 700, fontSize: 14, color: "#000", textDecoration: "none" }}>Trade-In</Link>
           <Link href="/contact" style={{ fontWeight: 700, fontSize: 14, color: "#000", textDecoration: "none" }}>Contact</Link>
         </div>
+        <MobileNav />
       </nav>
       <main style={{ paddingTop: 140, paddingBottom: 80, paddingLeft: 32, paddingRight: 32, maxWidth: 1200, margin: "0 auto" }}>
         <Link href="/inventory" style={{ color: "#696969", fontSize: 14, textDecoration: "none", fontWeight: 600 }}>← Back to Inventory</Link>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, marginTop: 32 }}>
           <div>
-            <img src={mainImage} alt={car.imageAlt} style={{ width: "100%", borderRadius: 24, objectFit: "cover", height: 400 }} />
+            <div style={{ position: "relative", background: "#f4f4f5", borderRadius: 24, overflow: "hidden", height: 400 }}>
+              <img src={mainImage} alt={car.imageAlt} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              {car.sold && (
+                <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.5)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <span style={{ background: "#dc2626", color: "#fff", fontSize: 24, fontWeight: 900, padding: "12px 32px", borderRadius: 100 }}>SOLD</span>
+                </div>
+              )}
+            </div>
             {car.images && car.images.length > 1 && (
               <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 8, marginTop: 8 }}>
                 {car.images.map((img, i) => (
-                  <img key={i} src={img} alt={`view ${i + 1}`} onClick={() => setMainImage(img)} style={{ width: "100%", height: 70, objectFit: "cover", borderRadius: 12, cursor: "pointer", border: mainImage === img ? "3px solid #000" : "3px solid transparent" }} />
+                  <img key={i} src={img} alt={`view ${i + 1}`} onClick={() => setMainImage(img)} loading="lazy"
+                    style={{ width: "100%", height: 70, objectFit: "cover", borderRadius: 12, cursor: "pointer", border: mainImage === img ? "3px solid #000" : "3px solid transparent", background: "#f4f4f5" }} />
                 ))}
               </div>
             )}
@@ -51,10 +79,14 @@ export default function CarPage({ params }: { params: Promise<{ slug: string }> 
               <span style={{ background: "#f4f4f5", color: "#696969", borderRadius: 100, padding: "4px 12px", fontSize: 12, fontWeight: 600 }}>{car.condition}</span>
               <span style={{ background: "#1453ae", color: "#fff", borderRadius: 100, padding: "4px 12px", fontSize: 12, fontWeight: 600 }}>{car.bodyType}</span>
             </div>
-            <h1 style={{ fontSize: 36, fontWeight: 900, marginBottom: 8 }}>{car.name}</h1>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
+              <h1 style={{ fontSize: 36, fontWeight: 900, marginBottom: 8 }}>{car.name}</h1>
+              <button onClick={handleShare} title="Copy link" style={{ background: "#f4f4f5", border: "none", borderRadius: 100, padding: "10px 16px", cursor: "pointer", display: "flex", alignItems: "center", gap: 6, fontSize: 13, fontWeight: 600, color: "#505054", flexShrink: 0 }}>
+                <ShareIcon /> {copied ? "Copied!" : "Share"}
+              </button>
+            </div>
             <p style={{ color: "#8a8a8a", fontSize: 14, marginBottom: 16 }}>{car.mileage} · {car.transmission} · {car.fuelType}</p>
             <div style={{ fontSize: 32, fontWeight: 900, marginBottom: 4 }}>K{car.priceZMW.toLocaleString()}</div>
-            
             <p style={{ color: "#25D366", fontSize: 13, fontWeight: 700, marginBottom: 24 }}>Price Negotiable — WhatsApp to enquire</p>
             <p style={{ color: "#505054", lineHeight: 1.7, marginBottom: 24 }}>{car.description}</p>
             {car.features && car.features.length > 0 && (
@@ -69,10 +101,14 @@ export default function CarPage({ params }: { params: Promise<{ slug: string }> 
                 </div>
               </div>
             )}
-            <div style={{ display: "flex", gap: 12 }}>
-              <a href="https://wa.me/260961185620" target="_blank" style={{ flex: 1, background: "#25D366", color: "#fff", borderRadius: 100, padding: "16px 24px", fontWeight: 700, fontSize: 14, textDecoration: "none", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center", gap: 8 }}><WhatsAppIcon /> WhatsApp</a>
-              <Link href="/contact" style={{ flex: 1, background: "#000", color: "#fff", borderRadius: 100, padding: "16px 24px", fontWeight: 700, fontSize: 14, textDecoration: "none", textAlign: "center" }}>Schedule Test Drive</Link>
-            </div>
+            {!car.sold ? (
+              <div style={{ display: "flex", gap: 12 }}>
+                <a href={waLink} target="_blank" style={{ flex: 1, background: "#25D366", color: "#fff", borderRadius: 100, padding: "16px 24px", fontWeight: 700, fontSize: 14, textDecoration: "none", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center", gap: 8 }}><WhatsAppIcon /> WhatsApp</a>
+                <Link href="/contact" style={{ flex: 1, background: "#000", color: "#fff", borderRadius: 100, padding: "16px 24px", fontWeight: 700, fontSize: 14, textDecoration: "none", textAlign: "center" }}>Schedule Test Drive</Link>
+              </div>
+            ) : (
+              <div style={{ background: "#f4f4f5", borderRadius: 100, padding: "16px 24px", textAlign: "center", fontWeight: 700, color: "#696969" }}>This vehicle has been sold</div>
+            )}
           </div>
         </div>
       </main>
