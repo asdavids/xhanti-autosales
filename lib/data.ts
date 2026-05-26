@@ -14,7 +14,28 @@ export interface Car {
   bodyType: string;
   featured: boolean;
   image: string;
-  images?: string[];
+  images?: string[  {
+    id: "4",
+    slug: "lexus-lx600-2023",
+    name: "Lexus LX600 2023",
+    make: "Lexus",
+    year: 2023,
+    price: 145000,
+    priceZMW: 3915000,
+    monthlyPayment: "Negotiable",
+    mileage: "15,000 km",
+    transmission: "Automatic",
+    fuelType: "Petrol",
+    condition: "Used",
+    bodyType: "SUV",
+    featured: true,
+    image: "/lx600-1.jpg",
+    images: ["/lx600-1.jpg", "/lx600-2.jpg", "/lx600-3.jpg", "/lx600-4.jpg", "/lx600-5.jpg", "/lx600-6.jpg", "/lx600-7.jpg", "/lx600-8.jpg", "/lx600-9.jpg", "/lx600-10.jpg", "/lx600-11.jpg", "/lx600-12.jpg", "/lx600-13.jpg"],
+    imageAlt: "Lexus LX600 2023",
+    description: "Immaculate 2023 Lexus LX600 in pearl white. 7-seater luxury SUV with tan leather interior, panoramic sunroof, rear entertainment screens, and cool box. Unregistered, duty paid. Serious buyers only.",
+    features: ["3.5L Twin-Turbo Petrol V6", "Automatic Transmission", "15,000 km Only", "7-Seater", "Panoramic Sunroof", "Rear Entertainment Screens", "Cool Box", "Tan Leather Interior", "Apple CarPlay", "Wireless Charger", "Heads-Up Display", "Height Control", "Unreg Duty Paid"],
+  },
+];
   imageAlt?: string;
   description?: string;
   features?: string[];
