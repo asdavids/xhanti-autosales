@@ -84,7 +84,7 @@ export default function Home() {
 
       <section style={{ paddingTop: 140, paddingBottom: 60, paddingLeft: 32, paddingRight: 32 }}>
         <div ref={heroRef} style={{ maxWidth: 1200, margin: "0 auto", borderRadius: 32, minHeight: 700, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "space-between", padding: "60px 60px 40px", position: "relative", overflow: "hidden", background: "#f8fafc" }}>
-          <img ref={imgRef} src="/hero-car.jpg" alt="" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", opacity: 0.95, transform: "scale(1.05)", transition: "transform 0.15s ease-out" }} />
+          <img ref={imgRef} src="/hero-car.jpg" alt="" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "contain", objectPosition: "center bottom", opacity: 0.95, transform: "scale(1.05)", transition: "transform 0.15s ease-out" }} />
           <div style={{ position: "absolute", top: 32, zIndex: 1, textAlign: "center" }}>
             <h1 style={{ fontSize: 72, fontWeight: 900, color: "#000", lineHeight: 1 }}>Xhanti AutoSales</h1>
             <p style={{ fontSize: 22, color: "#505054", fontWeight: 700, marginTop: 8 }}>DRIVE THE BEST</p>
