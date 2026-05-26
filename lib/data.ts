@@ -155,6 +155,28 @@ export const cars: Car[] = [
     description: "Immaculate 2022 Toyota Land Cruiser Prado VX-L in pearl white. 2.8L GD-6 diesel engine with 4x4 capability. Fully loaded with premium comfort and safety features. Located in Lusaka.",
     features: ["2.8L GD-6 Diesel Engine", "Automatic 4x4", "Leather Heated & Cooled Seats", "Panoramic Sunroof", "360° Camera", "Pre-Collision Assist", "Lane Assist", "Cooler Box", "Rear Spare Tyre", "Tow Bar", "Premium Alloy Wheels"],
   },
+  {
+    id: "7",
+    slug: "range-rover-velar-2019",
+    name: "Range Rover Velar R-Dynamic 2019",
+    make: "Land Rover",
+    year: 2019,
+    price: 45000,
+    priceZMW: 1215000,
+    monthlyPayment: "Negotiable",
+    mileage: "59,546 km",
+    transmission: "Automatic",
+    fuelType: "Diesel",
+    condition: "Used",
+    bodyType: "SUV",
+    featured: true,
+    image: "/velar-1.webp",
+    thumbnail: "/velar-1-thumb.webp",
+    images: ["/velar-1.webp", "/velar-2.webp", "/velar-3.webp", "/velar-4.webp", "/velar-5.webp", "/velar-6.webp", "/velar-7.webp", "/velar-8.webp", "/velar-9.webp", "/velar-10.webp", "/velar-11.webp"],
+    imageAlt: "Range Rover Velar R-Dynamic 2019",
+    description: "Stunning 2019 Range Rover Velar R-Dynamic in white with tan leather interior. 3.0L diesel engine, Meridian sound system, panoramic moonroof. Unregistered, duty paid. Located in Lusaka.",
+    features: ["3.0L Diesel Engine", "Automatic Transmission", "R-Dynamic Spec", "Meridian Sound System", "Panoramic Moon Roof", "Tan Leather Interior", "Dual Touchscreen Infotainment", "Digital Instrument Cluster", "Flush Door Handles", "22\" Alloy Wheels", "Unreg Duty Paid"],
+  },
 ];
 
 export const reviews = [
