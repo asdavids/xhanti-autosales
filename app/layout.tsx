@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import SplashScreen from "./components/SplashScreen";
@@ -13,6 +13,12 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Xhanti AutoSales | Drive the Best",
   description: "Lusaka's premier car dealership. Quality new and used vehicles at competitive prices.",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
