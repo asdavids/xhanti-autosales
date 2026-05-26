@@ -106,6 +106,27 @@ export const cars: Car[] = [
     description: "Immaculate 2023 Lexus LX600 in pearl white. 7-seater luxury SUV with tan leather interior, panoramic sunroof, rear entertainment screens, and cool box. Unregistered, duty paid. Serious buyers only.",
     features: ["3.5L Twin-Turbo Petrol V6", "Automatic Transmission", "15,000 km Only", "7-Seater", "Panoramic Sunroof", "Rear Entertainment Screens", "Cool Box", "Tan Leather Interior", "Apple CarPlay", "Wireless Charger", "Heads-Up Display", "Height Control", "Unreg Duty Paid"],
   },
+  {
+    id: "5",
+    slug: "mercedes-gle300d-2020",
+    name: "Mercedes-Benz GLE300d 2020",
+    make: "Mercedes-Benz",
+    year: 2020,
+    price: 65000,
+    priceZMW: 1755000,
+    monthlyPayment: "Negotiable",
+    mileage: "82,532 km",
+    transmission: "Automatic",
+    fuelType: "Diesel",
+    condition: "Used",
+    bodyType: "SUV",
+    featured: true,
+    image: "/gle300d-1.webp",
+    images: ["/gle300d-1.webp", "/gle300d-2.webp", "/gle300d-3.webp", "/gle300d-4.webp", "/gle300d-5.webp", "/gle300d-6.webp", "/gle300d-7.webp", "/gle300d-8.webp", "/gle300d-9.webp", "/gle300d-10.webp", "/gle300d-11.webp"],
+    imageAlt: "Mercedes-Benz GLE300d 2020",
+    description: "Well-maintained 2020 Mercedes-Benz GLE300d 4MATIC in iridium silver. 2.0L diesel engine with low fuel consumption, AMG styling pack, panoramic sunroof, and full black leather interior. Located in Lusaka.",
+    features: ["2.0L Diesel Engine", "9-Speed Automatic", "4MATIC All-Wheel Drive", "AMG Line Package", "Panoramic Sunroof", "Black Leather Interior", "MBUX Infotainment", "Digital Instrument Cluster", "Ambient Lighting", "Rear AC Vents", "Lane Assist", "Blind Spot Monitoring"],
+  },
 ];
 
 export const reviews = [
