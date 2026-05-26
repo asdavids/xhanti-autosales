@@ -115,7 +115,7 @@ export default function Home() {
             {cars.map((car) => (
               <Link key={car.id} href={`/cars/${car.slug}`} style={{ textDecoration: "none", background: "#fff", border: "1px solid #f1f5f9", borderRadius: 28, overflow: "hidden", display: "block" }}>
                 <div style={{ position: "relative", height: 220, overflow: "hidden", background: "#f4f4f5" }}>
-                  <img src={car.image} alt={car.imageAlt} style={{ width: "100%", height: "100%", objectFit: "cover" }} loading="lazy" />
+                  <img src={car.thumbnail} alt={car.imageAlt} style={{ width: "100%", height: "100%", objectFit: "cover" }} loading="lazy" />
                   {car.featured && <span style={{ position: "absolute", top: 16, right: 16, background: "#1453ae", color: "#fff", borderRadius: 100, padding: "4px 12px", fontSize: 12, fontWeight: 600 }}>Featured</span>}
                   {car.sold && <span style={{ position: "absolute", top: 16, left: 16, background: "#dc2626", color: "#fff", borderRadius: 100, padding: "4px 12px", fontSize: 12, fontWeight: 600 }}>Sold</span>}
                 </div>

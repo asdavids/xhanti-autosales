@@ -10,8 +10,8 @@ export default function SplashScreen() {
     if (!shown) {
       setVisible(true);
       sessionStorage.setItem("splashShown", "true");
-      const timer = setTimeout(() => setFadeOut(true), 2500);
-      const hide = setTimeout(() => setVisible(false), 3200);
+      const timer = setTimeout(() => setFadeOut(true), 1000);
+      const hide = setTimeout(() => setVisible(false), 1700);
       return () => { clearTimeout(timer); clearTimeout(hide); };
     }
   }, []);

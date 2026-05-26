@@ -14,6 +14,7 @@ export interface Car {
   bodyType: string;
   featured: boolean;
   image: string;
+  thumbnail: string;
   images?: string[];
   imageAlt?: string;
   description?: string;
@@ -38,6 +39,7 @@ export const cars: Car[] = [
     bodyType: "SUV",
     featured: true,
     image: "/lexus-1.webp",
+    thumbnail: "/lexus-1-thumb.webp",
     images: ["/lexus-1.webp", "/lexus-2.webp", "/lexus-3.webp", "/lexus-4.webp", "/lexus-5.webp", "/lexus-6.webp"],
     imageAlt: "Lexus LX 500d 2023",
     description: "Luxury meets power in this top-of-the-range SUV. Clean, low mileage, and fully loaded for comfort and performance. ZRA & Interpol Cleared. Serious buyers only.",
@@ -59,6 +61,7 @@ export const cars: Car[] = [
     bodyType: "SUV",
     featured: true,
     image: "/mazda-1.webp",
+    thumbnail: "/mazda-1-thumb.webp",
     images: ["/mazda-1.webp", "/mazda-2.webp", "/mazda-3.webp", "/mazda-4.webp", "/mazda-5.webp"],
     imageAlt: "Mazda CX-5 2017",
     description: "Clean and well-maintained 2017 Mazda CX-5 in striking red. Diesel engine with low running costs, packed with premium features. Neat condition inside and out.",
@@ -80,6 +83,7 @@ export const cars: Car[] = [
     bodyType: "SUV",
     featured: true,
     image: "/defender-4.webp",
+    thumbnail: "/defender-4-thumb.webp",
     images: ["/defender-4.webp", "/defender-5.webp", "/defender-3.webp", "/defender-2.webp", "/defender-1.webp"],
     imageAlt: "Land Rover Defender 110 2023",
     description: "Stunning 2023 Land Rover Defender 110 D300 in two-tone with black interior. Fully loaded with premium upgrades. Unreg, duty paid, fully serviced.",
@@ -101,6 +105,7 @@ export const cars: Car[] = [
     bodyType: "SUV",
     featured: true,
     image: "/lx600-1.webp",
+    thumbnail: "/lx600-1-thumb.webp",
     images: ["/lx600-1.webp", "/lx600-2.webp", "/lx600-3.webp", "/lx600-4.webp", "/lx600-5.webp", "/lx600-6.webp", "/lx600-7.webp", "/lx600-8.webp", "/lx600-9.webp", "/lx600-10.webp", "/lx600-11.webp", "/lx600-12.webp", "/lx600-13.webp"],
     imageAlt: "Lexus LX600 2023",
     description: "Immaculate 2023 Lexus LX600 in pearl white. 7-seater luxury SUV with tan leather interior, panoramic sunroof, rear entertainment screens, and cool box. Unregistered, duty paid. Serious buyers only.",
@@ -122,6 +127,7 @@ export const cars: Car[] = [
     bodyType: "SUV",
     featured: true,
     image: "/gle300d-1.webp",
+    thumbnail: "/gle300d-1-thumb.webp",
     images: ["/gle300d-1.webp", "/gle300d-2.webp", "/gle300d-3.webp", "/gle300d-4.webp", "/gle300d-5.webp", "/gle300d-6.webp", "/gle300d-7.webp", "/gle300d-8.webp", "/gle300d-9.webp", "/gle300d-10.webp", "/gle300d-11.webp"],
     imageAlt: "Mercedes-Benz GLE300d 2020",
     description: "Well-maintained 2020 Mercedes-Benz GLE300d 4MATIC in iridium silver. 2.0L diesel engine with low fuel consumption, AMG styling pack, panoramic sunroof, and full black leather interior. Located in Lusaka.",
@@ -143,6 +149,7 @@ export const cars: Car[] = [
     bodyType: "SUV",
     featured: true,
     image: "/prado-1.webp",
+    thumbnail: "/prado-1-thumb.webp",
     images: ["/prado-1.webp", "/prado-2.webp", "/prado-3.webp", "/prado-4.webp"],
     imageAlt: "Toyota Prado VX-L 2022",
     description: "Immaculate 2022 Toyota Land Cruiser Prado VX-L in pearl white. 2.8L GD-6 diesel engine with 4x4 capability. Fully loaded with premium comfort and safety features. Located in Lusaka.",
