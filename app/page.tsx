@@ -119,8 +119,8 @@ export default function Home() {
                   <h3 style={{ fontSize: 18, fontWeight: 700, color: "#000", marginBottom: 8 }}>{car.name}</h3>
                   <p style={{ color: "#8a8a8a", fontSize: 12, marginBottom: 12 }}>{car.mileage} · {car.transmission} · {car.fuelType}</p>
                   <div style={{ marginBottom: 16 }}>
-                    <span style={{ fontSize: 22, fontWeight: 900, color: "#000" }}>${car.price.toLocaleString()}</span>
-                    <span style={{ fontSize: 12, color: "#8a8a8a", marginLeft: 8 }}>/ K{car.priceZMW.toLocaleString()}</span>
+                    <span style={{ fontSize: 22, fontWeight: 900, color: "#000" }}>K{car.priceZMW.toLocaleString()}</span>
+                    
                   </div>
                   <div style={{ background: "#fafcff", border: "1px solid #ebf0f5", borderRadius: 100, padding: "12px 20px", textAlign: "center", fontSize: 14, fontWeight: 700, color: "#505054" }}>View Details</div>
                 </div>
@@ -137,7 +137,7 @@ export default function Home() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
             {[
               { title: "Quality Vehicles", desc: "Every vehicle inspected and certified to meet our high standards." },
-              { title: "Best Prices", desc: "Competitive prices in both USD and ZMW with flexible payment options." },
+              { title: "Best Prices", desc: "Competitive prices in Zambian Kwacha with flexible payment options." },
               { title: "Warranty Protection", desc: "Comprehensive warranty coverage for your peace of mind." },
             ].map((item) => (
               <div key={item.title} style={{ background: "#fff", border: "1px solid #f1f5f9", borderRadius: 28, padding: 24 }}>
