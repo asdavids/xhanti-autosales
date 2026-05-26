@@ -12,11 +12,11 @@ const WhatsAppIcon = () => (
 
 export default function InventoryPage() {
   const [filter, setFilter] = useState<"All" | "New" | "Used">("All");
-  const [maxPrice, setMaxPrice] = useState<number>(10000000);
+  const [maxPrice, setMaxPrice] = useState<number>(200000);
 
   const filtered = cars.filter(car => {
     if (filter !== "All" && car.condition !== filter) return false;
-    if (car.priceZMW > maxPrice) return false;
+    if (car.price > maxPrice) return false;
     return true;
   });
 
@@ -50,8 +50,8 @@ export default function InventoryPage() {
             <button key={f} style={btnStyle(filter === f)} onClick={() => setFilter(f)}>{f}</button>
           ))}
           <div style={{ marginLeft: "auto", display: "flex", alignItems: "center", gap: 12 }}>
-            <span style={{ fontSize: 13, fontWeight: 600, color: "#696969" }}>Max price: K{maxPrice.toLocaleString()}</span>
-            <input type="range" min={300000} max={10000000} step={100000} value={maxPrice}
+            <span style={{ fontSize: 13, fontWeight: 600, color: "#696969" }}>Max price: ${maxPrice.toLocaleString()}</span>
+            <input type="range" min={5000} max={200000} step={1000} value={maxPrice}
               onChange={e => setMaxPrice(Number(e.target.value))}
               style={{ width: 140, accentColor: "#000" }} />
           </div>
@@ -75,7 +75,7 @@ export default function InventoryPage() {
                 <h3 style={{ fontSize: 18, fontWeight: 700, color: "#000", marginBottom: 8 }}>{car.name}</h3>
                 <p style={{ color: "#8a8a8a", fontSize: 12, marginBottom: 16 }}>{car.mileage} · {car.transmission} · {car.fuelType}</p>
                 <div style={{ display: "flex", alignItems: "baseline", gap: 8, marginBottom: 16 }}>
-                  <span style={{ fontSize: 22, fontWeight: 900, color: "#000" }}>K{car.priceZMW.toLocaleString()}</span>
+                  <span style={{ fontSize: 22, fontWeight: 900, color: "#000" }}>${car.price.toLocaleString()}</span>
                 </div>
                 <div style={{ background: "#fafcff", border: "1px solid #ebf0f5", borderRadius: 100, padding: "12px 20px", textAlign: "center", fontSize: 14, fontWeight: 700, color: "#505054" }}>
                   {car.sold ? "Sold" : "View Details"}

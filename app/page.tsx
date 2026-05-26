@@ -127,7 +127,7 @@ export default function Home() {
                   <h3 style={{ fontSize: 18, fontWeight: 700, color: "#000", marginBottom: 8 }}>{car.name}</h3>
                   <p style={{ color: "#8a8a8a", fontSize: 12, marginBottom: 12 }}>{car.mileage} · {car.transmission} · {car.fuelType}</p>
                   <div style={{ marginBottom: 16 }}>
-                    <span style={{ fontSize: 22, fontWeight: 900, color: "#000" }}>K{car.priceZMW.toLocaleString()}</span>
+                    <span style={{ fontSize: 22, fontWeight: 900, color: "#000" }}>${car.price.toLocaleString()}</span>
                   </div>
                   <div style={{ background: "#fafcff", border: "1px solid #ebf0f5", borderRadius: 100, padding: "12px 20px", textAlign: "center", fontSize: 14, fontWeight: 700, color: "#505054" }}>View Details</div>
                 </div>

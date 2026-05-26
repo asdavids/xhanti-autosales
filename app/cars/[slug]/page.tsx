@@ -32,7 +32,7 @@ export default function CarPage({ params }: { params: Promise<{ slug: string }> 
   const [mainImage, setMainImage] = useState(car.image);
   const [copied, setCopied] = useState(false);
 
-  const waMessage = encodeURIComponent(`Hi, I'm interested in the ${car.name} (K${car.priceZMW.toLocaleString()}). Is it still available?`);
+  const waMessage = encodeURIComponent(`Hi, I'm interested in the ${car.name} ($${car.price.toLocaleString()}). Is it still available?`);
   const waLink = `https://wa.me/260961185620?text=${waMessage}`;
 
   const handleShare = () => {
@@ -86,7 +86,7 @@ export default function CarPage({ params }: { params: Promise<{ slug: string }> 
               </button>
             </div>
             <p style={{ color: "#8a8a8a", fontSize: 14, marginBottom: 16 }}>{car.mileage} · {car.transmission} · {car.fuelType}</p>
-            <div style={{ fontSize: 32, fontWeight: 900, marginBottom: 4 }}>K{car.priceZMW.toLocaleString()}</div>
+            <div style={{ fontSize: 32, fontWeight: 900, marginBottom: 4 }}>${car.price.toLocaleString()}</div>
             <p style={{ color: "#25D366", fontSize: 13, fontWeight: 700, marginBottom: 24 }}>Price Negotiable — WhatsApp to enquire</p>
             <p style={{ color: "#505054", lineHeight: 1.7, marginBottom: 24 }}>{car.description}</p>
             {car.features && car.features.length > 0 && (
