@@ -14,28 +14,7 @@ export interface Car {
   bodyType: string;
   featured: boolean;
   image: string;
-  images?: string[  {
-    id: "4",
-    slug: "lexus-lx600-2023",
-    name: "Lexus LX600 2023",
-    make: "Lexus",
-    year: 2023,
-    price: 145000,
-    priceZMW: 3915000,
-    monthlyPayment: "Negotiable",
-    mileage: "15,000 km",
-    transmission: "Automatic",
-    fuelType: "Petrol",
-    condition: "Used",
-    bodyType: "SUV",
-    featured: true,
-    image: "/lx600-1.webp",
-    images: ["/lx600-1.webp", "/lx600-2.webp", "/lx600-3.webp", "/lx600-4.webp", "/lx600-5.webp", "/lx600-6.webp", "/lx600-7.webp", "/lx600-8.webp", "/lx600-9.webp", "/lx600-10.webp", "/lx600-11.webp", "/lx600-12.webp", "/lx600-13.webp"],
-    imageAlt: "Lexus LX600 2023",
-    description: "Immaculate 2023 Lexus LX600 in pearl white. 7-seater luxury SUV with tan leather interior, panoramic sunroof, rear entertainment screens, and cool box. Unregistered, duty paid. Serious buyers only.",
-    features: ["3.5L Twin-Turbo Petrol V6", "Automatic Transmission", "15,000 km Only", "7-Seater", "Panoramic Sunroof", "Rear Entertainment Screens", "Cool Box", "Tan Leather Interior", "Apple CarPlay", "Wireless Charger", "Heads-Up Display", "Height Control", "Unreg Duty Paid"],
-  },
-];
+  images?: string[];
   imageAlt?: string;
   description?: string;
   features?: string[];
@@ -105,6 +84,27 @@ export const cars: Car[] = [
     imageAlt: "Land Rover Defender 110 2023",
     description: "Stunning 2023 Land Rover Defender 110 D300 in two-tone with black interior. Fully loaded with premium upgrades. Unreg, duty paid, fully serviced.",
     features: ["D300 Diesel Engine", "Panoramic Sunroof", "Heads-Up Display", "Meridian Sound System", "Inbuilt Fridge", "Wireless Charger", "22\" Brand New Rims", "Urban Front Lip", "Staircase", "Fully Serviced", "Unreg Duty Paid"],
+  },
+  {
+    id: "4",
+    slug: "lexus-lx600-2023",
+    name: "Lexus LX600 2023",
+    make: "Lexus",
+    year: 2023,
+    price: 145000,
+    priceZMW: 3915000,
+    monthlyPayment: "Negotiable",
+    mileage: "15,000 km",
+    transmission: "Automatic",
+    fuelType: "Petrol",
+    condition: "Used",
+    bodyType: "SUV",
+    featured: true,
+    image: "/lx600-1.webp",
+    images: ["/lx600-1.webp", "/lx600-2.webp", "/lx600-3.webp", "/lx600-4.webp", "/lx600-5.webp", "/lx600-6.webp", "/lx600-7.webp", "/lx600-8.webp", "/lx600-9.webp", "/lx600-10.webp", "/lx600-11.webp", "/lx600-12.webp", "/lx600-13.webp"],
+    imageAlt: "Lexus LX600 2023",
+    description: "Immaculate 2023 Lexus LX600 in pearl white. 7-seater luxury SUV with tan leather interior, panoramic sunroof, rear entertainment screens, and cool box. Unregistered, duty paid. Serious buyers only.",
+    features: ["3.5L Twin-Turbo Petrol V6", "Automatic Transmission", "15,000 km Only", "7-Seater", "Panoramic Sunroof", "Rear Entertainment Screens", "Cool Box", "Tan Leather Interior", "Apple CarPlay", "Wireless Charger", "Heads-Up Display", "Height Control", "Unreg Duty Paid"],
   },
 ];
 
