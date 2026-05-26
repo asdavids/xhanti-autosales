@@ -51,7 +51,7 @@ export default function InventoryPage() {
           ))}
           <div style={{ marginLeft: "auto", display: "flex", alignItems: "center", gap: 12 }}>
             <span style={{ fontSize: 13, fontWeight: 600, color: "#696969" }}>Max price: K{maxPrice.toLocaleString()}</span>
-            <input type="range" min={300000} max={5000000} step={100000} value={maxPrice}
+            <input type="range" min={300000} max={10000000} step={100000} value={maxPrice}
               onChange={e => setMaxPrice(Number(e.target.value))}
               style={{ width: 140, accentColor: "#000" }} />
           </div>

@@ -111,7 +111,7 @@ export default function Home() {
             </div>
             <Link href="/inventory" style={{ background: "#000", color: "#fff", borderRadius: 100, padding: "12px 24px", fontWeight: 700, fontSize: 14, textDecoration: "none" }}>View All</Link>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(340px, 1fr))", gap: 24 }}>
             {cars.map((car) => (
               <Link key={car.id} href={`/cars/${car.slug}`} style={{ textDecoration: "none", background: "#fff", border: "1px solid #f1f5f9", borderRadius: 28, overflow: "hidden", display: "block" }}>
                 <div style={{ position: "relative", height: 220, overflow: "hidden", background: "#f4f4f5" }}>
